@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -10,36 +11,41 @@ class WelcomeScreen extends StatelessWidget {
         width: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              Colors.blue,
-              Colors.lightBlue,
-              Colors.cyan,
-            ],
+            colors: [Colors.blue, Colors.lightBlue, Colors.cyan],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(top: 50, left: 15, right: 15),
+          padding: const EdgeInsets.only(left: 15, right: 15),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const SizedBox(),
-              Text(
-                "Discover your dream job here",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 35,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.asset(
+                  'assets/images/welcome.jpg',
+                  height: 250,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
                 ),
-              Text(
-                "Explore all the existing job roles based on your interest and study major.",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white.withAlpha(200)),
+              ),
+
+              Column(
+                children: [
+                  CustomText(
+                    title: "Discover Your Dream Job Here",
+                    fontSize: 40,
+                  ),
+                  const SizedBox(height: 15),
+                  CustomText(
+                    title: "Explore all the existing job roles based on your interest and study major.",
+                    fontSize: 18,
+                    color: Colors.white70,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ],
               ),
 
               Row(
@@ -54,12 +60,15 @@ class WelcomeScreen extends StatelessWidget {
                         backgroundColor: Colors.white,
                         foregroundColor: Colors.blue,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                       child: const Text(
                         "Login",
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
@@ -79,7 +88,10 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                       child: const Text(
                         "Register",
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
