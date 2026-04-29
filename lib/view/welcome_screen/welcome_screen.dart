@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/widgets/custom_button.dart';
 import 'package:ecommerce_app/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
@@ -51,49 +52,19 @@ class WelcomeScreen extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // Navigate to the next screen
-                      },
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(vertical: 15),
-                        backgroundColor: Colors.white,
-                        foregroundColor: Colors.blue,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      child: const Text(
-                        "Login",
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                    child: CustomButton(
+                          buttonLabel: "Login",
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.blue,
                     ),
                   ),
                   const SizedBox(width: 20),
                   Expanded(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // Navigate to the next screen
-                      },
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(vertical: 15),
-                        backgroundColor: Colors.white,
-                        foregroundColor: Colors.blue,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      child: const Text(
-                        "Register",
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
+                    child: CustomButton(
+                        buttonLabel: "Register",
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.blue,
+                       ),
                   ),
                 ],
               ),
