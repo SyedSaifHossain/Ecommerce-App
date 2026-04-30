@@ -1,6 +1,8 @@
 import 'package:ecommerce_app/widgets/custom_button.dart';
 import 'package:ecommerce_app/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
+import '../auth/login/login_screen.dart';
+import 'package:get/get.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -53,6 +55,10 @@ class WelcomeScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: CustomButton(
+
+                      onPressed: () {
+                        Get.to(const LoginScreen());
+                      },
                           buttonLabel: "Login",
                           backgroundColor: Colors.white,
                           foregroundColor: Colors.blue,
