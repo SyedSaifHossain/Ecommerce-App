@@ -4,11 +4,18 @@ class CustomTextField extends StatelessWidget {
   final String label;
   final bool? isSecured;
   final String? hintText;
-  const CustomTextField({super.key, required this.label, this.isSecured, this.hintText});
+  final bool? isRequired;
+  const CustomTextField({super.key, required this.label, this.isSecured, this.hintText, this.isRequired});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: (String? value){
+        isRequired == true ?
+        {(value == null || value.isEmpty) ? "This field is required" : null
+        }
+        : null;
+      },
       obscureText: isSecured ?? false,
       style: TextStyle(color: Colors.white),
       decoration: InputDecoration(

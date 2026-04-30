@@ -1,3 +1,5 @@
+import 'package:ecommerce_app/view/home_screen.dart';
+import 'package:ecommerce_app/widgets/custom_button.dart';
 import 'package:ecommerce_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,6 +12,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final form = GlobalKey<FormState>();
     return Scaffold(
       appBar: CustomAppBar(),
       body: Container(
@@ -28,21 +31,80 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               children: [
                 CustomText(
-                  title: "Welcome to loging page",
+                  title: "Login Here",
                   fontSize: 30,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
-                const SizedBox(height: 30),
-                CustomTextField(
-                    label: "Email",
-                    hintText: "Enter your email",
+                const SizedBox(height: 10),
+                CustomText(
+                  title: "Welcome back! Please login to your account.",
+                  fontSize: 18,
+                  color: Colors.white70,
+                  fontWeight: FontWeight.bold,
                 ),
-                const SizedBox(height: 15),
-                CustomTextField(
-                  label: "Password",
-                  hintText: "Enter your password",
-                  isSecured: true,
+                const SizedBox(height: 30),
+
+                Form(
+                  key: form,
+                  child: Column(
+                    children: [
+                      CustomTextField(
+                        label: "Email",
+                        hintText: "Enter your email",
+                        isRequired: true,
+                      ),
+
+                      const SizedBox(height: 15),
+                      CustomTextField(
+                        label: "Password",
+                        hintText: "Enter your password",
+                        isSecured: true,
+                        isRequired: true,
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 30),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: CustomText(
+                    title: 'Forget your password',
+                    fontSize: 16,
+                     color: Colors.white),
+                ),
+                const SizedBox(height: 30),
+
+                Row(
+                  children: [
+                    Expanded(
+                      child: CustomButton(
+                        onPressed: () {
+                          if(form.currentState!.validate()){
+                          Get.to(const HomeScreen());
+                          }
+                        },
+                        buttonLabel: "Sign In",
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.blue,
+                      ),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 20),
+
+                Row(
+                  children: [
+                    Expanded(
+                      child: CustomButton(
+                        onPressed: () {
+
+                        },
+                        buttonLabel: "Create an account",
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
