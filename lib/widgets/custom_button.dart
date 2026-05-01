@@ -28,6 +28,7 @@ class CustomButton extends StatelessWidget {
       ).copyWith(
         backgroundColor: WidgetStatePropertyAll(backgroundColor ?? Colors.blue),
         foregroundColor: WidgetStatePropertyAll(foregroundColor ?? Colors.white),
+        shadowColor: const WidgetStatePropertyAll(Colors.transparent),
       ),
       child: Text(
         buttonLabel,

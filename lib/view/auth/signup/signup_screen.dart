@@ -1,13 +1,14 @@
-import 'package:ecommerce_app/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+import '../../../widgets/custom_app_bar.dart';
+
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: CustomAppBar(),
+      appBar: CustomAppBar(),
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -20,7 +21,7 @@ class HomeScreen extends StatelessWidget {
         ),
         child: const Center(
           child: Text(
-            "Home Screen",
+            "Signup Screen",
             style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),

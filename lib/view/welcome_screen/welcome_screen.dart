@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import '../auth/login/login_screen.dart';
 import 'package:get/get.dart';
 
+import '../auth/signup/signup_screen.dart';
+
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
@@ -67,6 +69,9 @@ class WelcomeScreen extends StatelessWidget {
                   const SizedBox(width: 20),
                   Expanded(
                     child: CustomButton(
+                      onPressed: (){
+                        Get.to(const SignupScreen());
+                      },
                         buttonLabel: "Register",
                       backgroundColor: Colors.white,
                       foregroundColor: Colors.blue,

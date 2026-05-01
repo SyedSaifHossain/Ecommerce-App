@@ -10,12 +10,14 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: (String? value){
-        isRequired == true ?
-        {(value == null || value.isEmpty) ? "This field is required" : null
-        }
-        : null;
-      },
+      validator: isRequired == true
+          ? (value) {
+              if (value == null || value.isEmpty) {
+                return 'This field is required';
+              }
+              return null;
+            }
+          : null,
       obscureText: isSecured ?? false,
       style: TextStyle(color: Colors.white),
       decoration: InputDecoration(

@@ -12,7 +12,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final form = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
     return Scaffold(
       appBar: CustomAppBar(),
       body: Container(
@@ -46,7 +46,7 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(height: 30),
 
                 Form(
-                  key: form,
+                  key: formKey,
                   child: Column(
                     children: [
                       CustomTextField(
@@ -54,7 +54,6 @@ class LoginScreen extends StatelessWidget {
                         hintText: "Enter your email",
                         isRequired: true,
                       ),
-
                       const SizedBox(height: 15),
                       CustomTextField(
                         label: "Password",
@@ -69,9 +68,10 @@ class LoginScreen extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerRight,
                   child: CustomText(
-                    title: 'Forget your password',
+                    title: 'Forget your password?',
                     fontSize: 16,
-                     color: Colors.white),
+                    color: Colors.white,
+                  ),
                 ),
                 const SizedBox(height: 30),
 
@@ -80,8 +80,8 @@ class LoginScreen extends StatelessWidget {
                     Expanded(
                       child: CustomButton(
                         onPressed: () {
-                          if(form.currentState!.validate()){
-                          Get.to(const HomeScreen());
+                          if (formKey.currentState!.validate()) {
+                            Get.to(const HomeScreen());
                           }
                         },
                         buttonLabel: "Sign In",
@@ -91,17 +91,15 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-
                 const SizedBox(height: 20),
-
                 Row(
                   children: [
                     Expanded(
                       child: CustomButton(
-                        onPressed: () {
-
-                        },
-                        buttonLabel: "Create an account",
+                        onPressed: (){},
+                        buttonLabel: "Create your account",
+                        backgroundColor: Colors.transparent,
+                        foregroundColor: Colors.white,
                       ),
                     ),
                   ],
