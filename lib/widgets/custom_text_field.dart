@@ -20,6 +20,7 @@ class CustomTextField extends StatelessWidget {
           : null,
       obscureText: isSecured ?? false,
       style: TextStyle(color: Colors.white),
+      textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
         fillColor: Colors.white.withOpacity(0.3),

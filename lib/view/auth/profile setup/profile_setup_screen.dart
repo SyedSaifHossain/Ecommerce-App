@@ -1,15 +1,14 @@
+import 'package:ecommerce_app/view/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../widgets/custom_app_bar.dart';
 import '../../../widgets/custom_button.dart';
 import '../../../widgets/custom_text.dart';
 import '../../../widgets/custom_text_field.dart';
-import '../login/login_screen.dart';
-import '../profile setup/profile_setup_screen.dart';
 import 'package:get/get.dart';
 
-class SignupScreen extends StatelessWidget {
-  const SignupScreen({super.key});
+class ProfileSetupScreen extends StatelessWidget {
+  const ProfileSetupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,7 @@ class SignupScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 CustomText(
-                  title: "Sign up to create your account and explore the job opportunities.",
+                  title: "Welcome back! Please login to your account.",
                   fontSize: 18,
                   color: Colors.white70,
                   fontWeight: FontWeight.bold,
@@ -73,16 +72,26 @@ class SignupScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 30),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: CustomText(
+                    title: 'Forget your password?',
+                    fontSize: 16,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 30),
+
                 Row(
                   children: [
                     Expanded(
                       child: CustomButton(
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
-                            Get.to(const ProfileSetupScreen());
+                            Get.to(const HomeScreen());
                           }
                         },
-                        buttonLabel: "Sign Up",
+                        buttonLabel: "Complete Signup",
                         backgroundColor: Colors.white,
                         foregroundColor: Colors.blue,
                       ),
@@ -94,10 +103,8 @@ class SignupScreen extends StatelessWidget {
                   children: [
                     Expanded(
                       child: CustomButton(
-                        onPressed: (){
-                          Get.to(const LoginScreen());
-                        },
-                        buttonLabel: "Already have an account? Sign In",
+                        onPressed: () {},
+                        buttonLabel: "Create your account",
                         backgroundColor: Colors.transparent,
                         foregroundColor: Colors.white,
                       ),
