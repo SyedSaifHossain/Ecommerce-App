@@ -1,6 +1,5 @@
 import 'package:ecommerce_app/view/home_screen.dart';
 import 'package:flutter/material.dart';
-
 import '../../../widgets/custom_app_bar.dart';
 import '../../../widgets/custom_button.dart';
 import '../../../widgets/custom_text.dart';
@@ -31,57 +30,77 @@ class ProfileSetupScreen extends StatelessWidget {
             child: Column(
               children: [
                 CustomText(
-                  title: "Signup Here",
+                  title: "Setup Your Profile",
                   fontSize: 30,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
                 const SizedBox(height: 10),
                 CustomText(
-                  title: "Welcome back! Please login to your account.",
+                  title: "Setup your profile to create your account and explore the job opportunities.",
                   fontSize: 18,
                   color: Colors.white70,
                   fontWeight: FontWeight.bold,
                 ),
                 const SizedBox(height: 30),
-
+                Stack(
+                  alignment: Alignment.bottomRight,
+                  children: [
+                    Container(
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white,
+                        border: Border.all(color: Colors.black, width: 2),
+                      ),
+                      child: const Icon(
+                        Icons.person,
+                        size: 80,
+                        color: Colors.blue,
+                      ),
+                    ),
+                    Container(
+                      width: 35,
+                      height: 35,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white,
+                        border: Border.all(color: Colors.black, width: 2),
+                      ),
+                      child: const Icon(
+                        Icons.camera_alt,
+                        size: 20,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ]
+                ),
+                const SizedBox(height: 50),
                 Form(
                   key: formKey,
                   child: Column(
                     children: [
                       CustomTextField(
-                        label: "Email",
-                        hintText: "Enter your email",
+                        label: "First Name",
+                        hintText: "Enter your first name",
                         isRequired: true,
                       ),
                       const SizedBox(height: 15),
                       CustomTextField(
-                        label: "Password",
-                        hintText: "Enter your password",
-                        isSecured: true,
+                        label: "Last Name",
+                        hintText: "Enter your last name",
                         isRequired: true,
                       ),
                       const SizedBox(height: 15),
                       CustomTextField(
-                        label: "Confirm Password",
-                        hintText: "Re-enter your password",
-                        isSecured: true,
-                        isRequired: true,
+                        label: "Phone Number",
+                        hintText: "Enter your phone number",
                       ),
                     ],
                   ),
                 ),
                 const SizedBox(height: 30),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: CustomText(
-                    title: 'Forget your password?',
-                    fontSize: 16,
-                    color: Colors.white,
-                  ),
-                ),
-                const SizedBox(height: 30),
-
                 Row(
                   children: [
                     Expanded(
@@ -94,19 +113,6 @@ class ProfileSetupScreen extends StatelessWidget {
                         buttonLabel: "Complete Signup",
                         backgroundColor: Colors.white,
                         foregroundColor: Colors.blue,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Row(
-                  children: [
-                    Expanded(
-                      child: CustomButton(
-                        onPressed: () {},
-                        buttonLabel: "Create your account",
-                        backgroundColor: Colors.transparent,
-                        foregroundColor: Colors.white,
                       ),
                     ),
                   ],
